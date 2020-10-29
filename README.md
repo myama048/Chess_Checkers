@@ -2,18 +2,23 @@
  > Prompt text is any lines beginning with "\<"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # \<Chess, Checkers, and Make Your Own Rules\>
- > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
  
- > Authors: \<[Thomas Gustafson](https://github.com/tgustafson2)[Jorge Ruiz](https://github.com/ruiz-jorge)[Masashi Yamaguchi] (https://github.com/myama048)\>
+ > Authors: \<[Thomas Gustafson](https://github.com/tgustafson2)[Jorge Ruiz](https://github.com/ruiz-jorge)[Masashi Yamaguchi](https://github.com/myama048)\>
  
 
 ## Project Description
  > We thought it would be interesting to implement a program that would allow users to play chess or checkers and create their own rules to play by.  This would allow users to explore how to put a new spin on an old classic. We will implement the project using C++, classes, and inheritance.  The input will be the users names, what game they want to play, potential new rules, and what moves they want to make. The output will be a visual representation of the board and pieces, prompting user input, and declaring a winner.
+
  > Abstract Factory
+
  > We will use Abstract Factory by implementing a generic class for the game pieces. Each piece will have generic attributes and then they will be overwritten in the concrete classes for each specific piece. This will allow for different pieces to easily be added in the future.
+
  > Factory Method
+
  > We will use Factory method to instantiate different versions of abstract classes based on the decisions of the user.  The client will be able to create different versions of a game, that game will create different instances of pieces as well.  This is needed so the user can vary what game they want to play or if they want to come up with their own rules. Using inheritance will allow the experience to remain the same despite the differences.
+
  > Strategy
+
  > We will use Strategy by defining multiple algorithms to let users pass the algorithm to be used as a parameter. The movement of each piece can be implemented differently. Every character will have its own move() implementation. This way, there is no code reusability and we can not change the implementation at run time.
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 

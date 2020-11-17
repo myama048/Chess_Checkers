@@ -10,9 +10,8 @@
 
   We will use Abstract Factory by implementing a generic class for the game pieces. Each piece will have generic attributes and then they will be overwritten in the concrete classes for each specific piece. This will allow for different pieces to easily be added in the future.
 
-  Factory Method
-
-  We will use Factory method to instantiate different versions of abstract classes based on the decisions of the user.  The client will be able to create different versions of a game, that game will create different instances of pieces as well.  This is needed so the user can vary what game they want to play or if they want to come up with their own rules. Using inheritance will allow the experience to remain the same despite the differences.
+Strategy
+  We will use Strategy by defining multiple algorithms to let users pass the algorithm to be used as a parameter. The movement of each piece can be implemented differently. Every character will have its own move() implementation. This way, there is no code reusability and we can not change the implementation at run time
 
   Proxy
 

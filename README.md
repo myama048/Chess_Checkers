@@ -1,6 +1,6 @@
 # \<Chess, Checkers, and Make Your Own Rules\>
  
-  Authors: \<[Thomas Gustafson] (https://github.com/tgustafson2)[Jorge Ruiz] (https://github.com/ruiz-jorge)[Masashi Yamaguchi](https://github.com/myama048)\>
+  Authors: \<[Thomas Gustafson ](https://github.com/tgustafson2)[Jorge Ruiz ](https://github.com/ruiz-jorge)[Masashi Yamaguchi](https://github.com/myama048)\>
  
 
 ## Project Description

@@ -14,9 +14,10 @@
 
   We will use Factory method to instantiate different versions of abstract classes based on the decisions of the user.  The client will be able to create different versions of a game, that game will create different instances of pieces as well.  This is needed so the user can vary what game they want to play or if they want to come up with their own rules. Using inheritance will allow the experience to remain the same despite the differences.
 
-  Strategy
+  Proxy
 
-  We will use Strategy by defining multiple algorithms to let users pass the algorithm to be used as a parameter. The movement of each piece can be implemented differently. Every character will have its own move() implementation. This way, there is no code reusability and we can not change the implementation at run time.
+  We will use proxy to take user decisions and act on the particular game being played. It will also give the option to create a new game or simply quit.  It will contain a pointer to the game class and implements the interface.
+
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
  > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 

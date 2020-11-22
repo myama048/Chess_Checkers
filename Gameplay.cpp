@@ -1,12 +1,16 @@
 #include "Gameplay.hpp"
 #include <vector>
 #include <string>
-#include "Game"
+#include <iostream>
+#include "Game.hpp"
+#include "Chess.hpp"
+//#include "Checkers.hpp"
+#include "MakeyourOwn.hpp"
 
 void Gameplay::SetNames(){
     if (playernum==0)inputPlayernum();
     std::cin.ignore(2000,'\n');
-    for (int i=0;i<num; i++){
+    for (int i=0;i<playernum; i++){
         std::string input;
         std::cout<<"Please enter a player's name: \n";
         getline(std::cin,input);
@@ -35,7 +39,10 @@ void Gameplay::addName(std::string input){
 }
 
 std::string Gameplay::getName(int num){
+	if (names.size()!=0)
 	return names[num];
+	else
+	return "No names entered";
 }
 
 void Gameplay::ChooseGame(){
@@ -64,7 +71,7 @@ void Gameplay::Menu(){
         std::cout<<"3.Play Again\n";
         std::cout<<"4.Start Over\n";
         std::cout<<"5.Play Game\n";
-        std::cout<<"6.Print Board"
+        std::cout<<"6.Print Board";
         std::cout<<"7.Exit\n";
         std::cin>>input;
         if (input==1)SetNames();
@@ -79,7 +86,7 @@ void Gameplay::Menu(){
         if (game!=nullptr)delete[]game;
 }
 void Gameplay::PrintBoard(){
-    if (game!=nullptr)game.PrintBoard();
+    if (game!=nullptr)game->PrintBoard();
     else std::cout<<"No game to print board from\n";
 }
 void Gameplay::Startover(){
@@ -92,7 +99,7 @@ void Gameplay::Play(){
     if (gamechoice<1||gamechoice>3)ChooseGame();
     if (names.size()==0)SetNames();
     MakeGame();
-    game.playGame();
+    game->playGame();
 }
 void Gameplay::MakeGame(){
     if (gamechoice==1)game=new Checkers(names);

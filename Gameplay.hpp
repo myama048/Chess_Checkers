@@ -2,14 +2,16 @@
 #define __GAMEPLAY_HPP__
 #include <vector>
 #include <string>
-#include "Game"
-
-Class Gameplay{
+#include "Game.hpp"
+#include "Chess.hpp"
+#include "Checkers.hpp"
+#include "MakeyourOwn.hpp"
+class Gameplay{
     private:
         int gamechoice;
         int playernum;
         Game* game;
-        vector<std::string>names;
+        std::vector<std::string>names;
     public:
 	Gameplay(){
 		game=nullptr;
@@ -21,8 +23,6 @@ Class Gameplay{
 	int getPlayerNum();
 	void addName(std::string);
 	std::string getName(int);
-	void addName(string);
-	std::string getName(int);
         void ChooseGame();
         void PrintNames();
         void Menu();
@@ -31,7 +31,7 @@ Class Gameplay{
         void Play();
         void MakeGame();
         void PlayAgain();
-}
+};
 
 
 #endif	

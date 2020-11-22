@@ -9,9 +9,20 @@ Class Gameplay{
         int gamechoice;
         int playernum;
         Game* game;
-        vector<std::string*>names;
+        vector<std::string>names;
     public:
+	Gameplay(){
+		game=nullptr;
+		gamechoice=0;
+		playernum=0;}
         void SetNames();
+	void inputPlayernum();
+	void setPlayerNum(int);
+	int getPlayerNum();
+	void addName(std::string);
+	std::string getName(int);
+	void addName(string);
+	std::string getName(int);
         void ChooseGame();
         void PrintNames();
         void Menu();

@@ -1,20 +1,41 @@
-nclude "Gameplay.hpp"
+#include "Gameplay.hpp"
 #include <vector>
 #include <string>
 #include "Game"
 
 void Gameplay::SetNames(){
-    int num;
-    std::cout<<"How many Players are there?\n";
-    std::cin>>num;
-    playernum=num;
-    std::cin.ignore(1000,'\n');
+    if (playernum==0)inputPlayernum();
+    std::cin.ignore(2000,'\n');
     for (int i=0;i<num; i++){
         std::string input;
         std::cout<<"Please enter a player's name: \n";
         getline(std::cin,input);
-        names.push_back(input);
+        addName(input);
     }
+}
+
+void Gameplay::inputPlayernum(){
+    int num;
+    std::cout<<"How many Players are there?\n";
+    std::cin>>num;
+    setPlayerNum(num);
+
+}
+
+void Gameplay::setPlayerNum(int num){
+	playernum=num;
+}
+
+int Gameplay::getPlayerNum(){
+	return playernum;
+}
+
+void Gameplay::addName(std::string input){
+	names.push_back(input);
+}
+
+std::string Gameplay::getName(int num){
+	return names[num];
 }
 
 void Gameplay::ChooseGame(){

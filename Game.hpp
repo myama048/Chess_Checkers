@@ -10,11 +10,11 @@
 class Game {
     private:
 	std::vector<std::vector<std::pair<int,int>>> board;
-	std::string* name;
+	std::string* player_name;
 	std::vector<Piece*> pieces;
-	bool* player_status;
+	std::vector<bool> player_status;
 	virtual bool check_win() = 0;
-	virtual void move_piece(int);
+	virtual void move_piece(int,int,int,int);
 	virtual void player_turn(int) = 0;
 
     public:

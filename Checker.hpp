@@ -5,27 +5,16 @@
 #include <cmath>
 #include "MoveInterface.hpp"
 #include "CheckerMove.hpp"
-
+#include "Piece.hpp"
 
 
 
 class Checker:public Piece{
         public:
-          Checker(std::string name,int moveLim):Piece(name){move_limit=2;}
-          bool setBehavior(MoveInterface* mv,std::string mvtype){
-          if (behavior!=nullptr)delete[]behavior;
-          if (mvtype!="Checker")return false;
-          behavior=mv;
-          return true;
-          }
+          Checker(std::string name,int moveLim):Piece(name);
+          bool setBehavior(MoveInterface* mv,std::string mvtype);
           bool move (std::vector<std::vector<std::pair<int,int>>> board,
-               std::vector<Pieces>,int startrow,int startcol,int endrow,int endcol){
-               if (abs(startrow-endrow)>move_limit||abs(startcol-endcol)>move_limit)return false;
-               if (behavior.move()==false)return false;
-               movesMade++;
-               return true;
-               
-          } 
+               std::vector<Piece*>pieces,int startrow,int startcol,int endrow,int endcol);
 }
 
 

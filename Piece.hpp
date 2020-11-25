@@ -6,6 +6,12 @@
 #include <string>
 #include "MoveInterface.hpp"
 
+class MoveInterface;
+class DiagonalMove;
+class StraightMove;
+class SideMove;
+class KnightMove;
+
 class Piece{
     private:
         std::string name;
@@ -14,22 +20,18 @@ class Piece{
         int move_limit;
         int movesMade;
     public:
-        Piece(std::string name){
-        this->name=name;
-        movesMade=0;
-        behavior=nullptr;
-        }
-        bool returnStatus(){return is_active;}
-        void setStatus(bool stat){is_active=stat;}
+        Piece(std::string name);
+        bool returnStatus();
+        void setStatus(bool stat);
         virtual bool move (std::vector<std::vector<std::pair<int,int>>> board,
-               std::vector<Pieces>,int startrow,int startcol,int endrow,int endcol)=0;
-        std::string getName(){return name}
-        virtual bool setBehavior(MoveInterface* mv,std:string)=0;
-        int getmovesMade(){return movesMade;}
+               std::vector<Piece*>,int startrow,int startcol,int endrow,int endcol)=0;
+        std::string getName();
+        virtual bool setBehavior(MoveInterface* mv,std::string)=0;
+        int getmovesMade();
         
 
 
-}
+};
 
 
 

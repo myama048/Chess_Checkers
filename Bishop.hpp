@@ -2,28 +2,22 @@
 #define __BISHOP_HPP__
 #include <vector>
 #include <utility>
+#include "Piece.hpp"
 #include "MoveInterface.hpp"
 #include "DiagonalMove.hpp"
+#include "StraightMove.hpp"
+#include "SideMove.hpp"
+#include "KnightMove.hpp"
 
+class MoveInterface;
 
-
-class Bishop:public Piece{
+class Bishop : public Piece{
         public:
-          Rook(std::string name):Piece(name){move_limit=0;}
-          bool setBehavior(MoveInterface* mv,std::string mvtype){
-          if (behavior!=nullptr)delete[]behavior;
-          if (mvtype!="Diagonal")return false;
-          behavior=mv;
-          return true;
-          }
+          Bishop(std::string name):Piece(name);
+          bool setBehavior(MoveInterface* mv,std::string mvtype);
           bool move (std::vector<std::vector<std::pair<int,int>>> board,
-               std::vector<Pieces>,int startrow,int startcol,int endrow,int endcol){
-               if (behavior.move()==false)return false;
-               movesMade++;
-               return true;
-               
-          }          
-}
+               std::vector<Piece*>pieces,int startrow,int startcol,int endrow,int endcol);
+};
 
 
 

@@ -13,6 +13,8 @@ class StraightMove : public MoveInterface {
 				return false;
 			if(sy == dy) // move is not done
 				return false;
+			if(sx >= 0 && sx <= 9 && sy >= 0 && sy <= 9 && dx >= 0 && dx <= 9 && dy >= 0 && dy <= 9)
+				return false;
 			
 			if(Board[sx][sy].first == 1){ //player 1 's POV
 				for(int i = sy + 1; i < dy - 1; i++){ // loop to check all spots in between sy & (dy - 1) are open
@@ -49,7 +51,7 @@ class StraightMove : public MoveInterface {
 				}
 
 				Board[new_sx][new_sy].first = 0;
-				Board[new_dx][new_dy] = 2;
+				Board[new_dx][new_dy].first = 2;
 			}
 			return true;
 		}

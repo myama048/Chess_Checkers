@@ -4,9 +4,7 @@
 #include <vector>
 #include <utility>
 #include "MoveInterface.hpp"
-#include "Piece.hpp"
 
-class Piece;
 
 class KnightMove:public MoveInterface{
 	public:

@@ -3,18 +3,16 @@
 //Mock class for testing puposes
 #include <vector>
 #include <utility>
-#include "Piece.hpp"
-#include "Bishop.hpp"
 
 
 class Piece;
-class Bishop;
-class Pawn;
-class Rook;
-class Queen;
-class Knight;
-class King;
-class Checker;
+//class Bishop;
+//class Pawn;
+//class Rook;
+//class Queen;
+//class Knight;
+//class King;
+//class Checker;
 
 class MoveInterface{
 	public:

@@ -6,14 +6,14 @@
 #include <string>
 #include "MoveInterface.hpp"
 
-class MoveInterface;
-class DiagonalMove;
-class StraightMove;
-class SideMove;
-class KnightMove;
+//class MoveInterface;
+//class DiagonalMove;
+//class StraightMove;
+//class SideMove;
+//class KnightMove;
 
 class Piece{
-    private:
+    protected:
         std::string name;
         MoveInterface* behavior;
         bool is_active;

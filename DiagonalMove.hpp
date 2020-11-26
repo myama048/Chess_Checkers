@@ -3,10 +3,10 @@
 //Mock class for testing puposes
 #include <vector>
 #include <utility>
-#include "Piece.hpp"
+//#include "Piece.hpp"
 #include "MoveInterface.hpp"
 
-class Piece;
+//class Piece;
 
 class DiagonalMove : public MoveInterface{
 	public:

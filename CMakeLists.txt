@@ -20,6 +20,7 @@ ADD_EXECUTABLE(test
 	CheckerMove.cpp
 	DiagonalMove.cpp
 	StraightMove.cpp
+	Gameplay.cpp
 )
 
 

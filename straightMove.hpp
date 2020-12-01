@@ -13,7 +13,7 @@ class StraightMove : public MoveInterface {
 				return false;
 			if(sy == dy) // move is not done
 				return false;
-			if(sx >= 0 && sx <= 7 && sy >= 0 && sy <= 7 && dx >= 0 && dx <= 7 && dy >= 0 && dy <= 7)
+			if(!(sx >= 0 && sx <= 7 && sy >= 0 && sy <= 7 && dx >= 0 && dx <= 7 && dy >= 0 && dy <= 7))
 				return false;
 			
 			for(int i = sy + 1; i < dy - 1; i++){ // loop to check all spots in between sy & (dy - 1) are open
@@ -21,12 +21,12 @@ class StraightMove : public MoveInterface {
 					return false;
 			}
 	
-			if(Board[dx][dy].first == Board[dx][sy].first){ // there's other piece on [dx][dy]
+			if(Board[sx][sy].first == Board[dx][dy].first){ // there's other piece on [dx][dy]
 				return false;		// 1 means your piece
 			}	
 				
 			else if(Board[dx][dy].first != 0){ // 2 means that there's enemy's piece
-				v_p[Board[sx][sy].second]->setStatus(false);// set status of enemy's piece to be taken
+				v_p[Board[dx][dy].second]->setStatus(false);// set status of enemy's piece to be taken
 			}
 
 			Board[dx][dy].first = Board[sx][sy].first;// new location to be occupied

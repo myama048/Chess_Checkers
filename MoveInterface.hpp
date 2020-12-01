@@ -10,5 +10,4 @@ class MoveInterface {
 		virtual bool move(std::vector<std::vector<std::pair<int, int>>> Board, std::vector<Pieces*> v_p, int sx, int sy, int dx, int dy) = 0;
 };
 
-
 #endif

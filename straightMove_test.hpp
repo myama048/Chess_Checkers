@@ -7,19 +7,19 @@
 #include "Pawn.hpp"
 #include <vector>
 #include <utility>
-
+using namespace std;
 //std::vector<std::vector<std::pair<int posiStatus, int idxPieceVector>>> board;
 //std::vector<Pieces*> v_p;
 
 TEST(straightMove, StraightByOne){
-	std::vector<Pieces*> v_p;
-	std::vector<std::vector<std::pair<int posiStatus, int idxPieceVector>>> board;
+	vector<Pieces*> v_p;
+	vector<vector<pair<int posiStatus, int idxPieceVector>>> board;
 	Piece* pawn = new Pawn("Pawn");
 	MoveInterface* mv = new StraightMove();
 	pawn->setBehavior(mv, "Straight");
-	v_p.std::push_back(new Pawn());
-	board[0][0] = pawn;
-	EXPECT_TRUE(move(board, v_p, 0, 0, 0, 1));
+	v_p.push_back(new Pawn());
+	board.at(0).at(0) = pawn;
+	EXPECT_TRUE(pawn->move(board, v_p, 0, 0, 0, 1));
 }
 /*
 TEST(straightMove, StraightByMultipleOpen{

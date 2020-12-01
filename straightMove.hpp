@@ -13,46 +13,25 @@ class StraightMove : public MoveInterface {
 				return false;
 			if(sy == dy) // move is not done
 				return false;
-			if(sx >= 0 && sx <= 9 && sy >= 0 && sy <= 9 && dx >= 0 && dx <= 9 && dy >= 0 && dy <= 9)
+			if(sx >= 0 && sx <= 7 && sy >= 0 && sy <= 7 && dx >= 0 && dx <= 7 && dy >= 0 && dy <= 7)
 				return false;
 			
-			if(Board[sx][sy].first == 1){ //player 1 's POV
-				for(int i = sy + 1; i < dy - 1; i++){ // loop to check all spots in between sy & (dy - 1) are open
-					if(Board[sx][i].first != 0) // 0 means the board is empty
-						return false;
-				}
-	
-				if(Board[dx][dy].first == 1){ // there's other piece on [dx][dy]
-					return false;		// 1 means your piece
-				}	
-					
-				if(Board[dx][dy].first == 2){ // 2 means that there's enemy's piece
-					vp[Board[sx][sy].second]->setStatus(false);// set status of enemy's piece to be taken
-				}
-
-				Board[sx][sy].first = 0; // update the start to be empty 0 = empty
-				Board[dx][dy].first = 1;// new location to be occupied
-			}
-			else if(Board[sx][sy].first == 2){ // player 2 's POV
-				new_sx = 9 - sx;
-				new_sy = 9 - sy;
-				new_dx = 9 - dx;
-				new_dy = 9 - dy;
-				for(int i = new_sy - 1; i > dy + 1; i--){
-					if(Board[new_sx][i].first != 0)
-						return false;
-				}
-
-				if(Board[new_dx][new_dy].first == 2)
+			for(int i = sy + 1; i < dy - 1; i++){ // loop to check all spots in between sy & (dy - 1) are open
+				if(Board[sx][i].first != 0) // 0 means the board is empty
 					return false;
-
-				if(Board[new_dx][new_dy].first == 1){
-					vp[Board[sx][sy].second]->setStatus(false);
-				}
-
-				Board[new_sx][new_sy].first = 0;
-				Board[new_dx][new_dy].first = 2;
 			}
+	
+			if(Board[dx][dy].first == Board[dx][sy].first){ // there's other piece on [dx][dy]
+				return false;		// 1 means your piece
+			}	
+				
+			else if(Board[dx][dy].first != 0){ // 2 means that there's enemy's piece
+				v_p[Board[sx][sy].second]->setStatus(false);// set status of enemy's piece to be taken
+			}
+
+			Board[dx][dy].first = Board[sx][sy].first;// new location to be occupied
+			Board[sx][sy].first = 0; // update the start to be empty, 0 = empty
+
 			return true;
 		}
 };

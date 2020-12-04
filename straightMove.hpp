@@ -12,12 +12,18 @@ class StraightMove : public MoveInterface {
 	public:
 		bool move(std::vector<std::vector<std::pair<int , int>>> Board, std::vector<Piece*> v_p, int sx, int sy, int dx, int dy){
 			//int user = v_p[idxPieceVector]->get_user(); // need to get user
-			if(sy != dy) //column should be the same
+			if(sy != dy){ //column should be the same
+				printf("need to move\n");
 				return false;
-			if(sx == dx) // move is not done
+			}
+			if(sx == dx){ // move is not done
+				printf("can't go side\n");
 				return false;
-			if(!(sx >= 0 && sx <= 7 && sy >= 0 && sy <= 7 && dx >= 0 && dx <= 7 && dy >= 0 && dy <= 7))
+			}
+			if(!(sx >= 0 && sx <= 7 && sy >= 0 && sy <= 7 && dx >= 0 && dx <= 7 && dy >= 0 && dy <= 7)){
+				printf("not in range\n");
 				return false;
+			}
 			
 			for(int i = sx + 1; i < dx - 1; i++){ // loop to check all spots in between sy & (dy - 1) are open
 				if(Board[i][sy].first != 0){ // 0 means the board is empty

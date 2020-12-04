@@ -1,13 +1,14 @@
-#ifndef __DIAGONAL_MOVE_HPP__
-#define __DIAGONAL_MOVE_HPP__
+#ifndef __DIAGONALMOVE_HPP__
+#define __DIAGONALMOVE_HPP__
 
 #include "MoveInterface.hpp"
-
-class MoveInterface;
+#include <vector>
+#include <utility>
+//class MoveInterface;
 
 class DiagonalMove : public MoveInterface {
 	public:
-		bool move(vector<vector<pair<int idx, int posiStatus>>> board, vector<Pieces*> v_p, int sx, int sy, int dx, int dy){
+		bool move(std::vector<std::vector<std::pair<int, int>>> board, std::vector<Piece*> v_p, int sx, int sy, int dx, int dy){
 			if(!(dx - sx == dy - sy))
 				return false;
 			if(sx == dx || sy == dy)

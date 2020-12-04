@@ -7,19 +7,19 @@ SET (CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(test
 	unit_test.cpp
-	#Piece.cpp
+	Piece.cpp
 	#Bishop.cpp
 	#Rook.cpp
 	#Knight.cpp
 	#King.cpp
 	#Queen.cpp
-	#Pawn.cpp
+	Pawn.cpp
 	#Checker.cpp
 	#sideMove.cpp
 	#KnightMove.cpp
 	#CheckerMove.cpp
 	#diagonalMove.cpp
-	#straightMove.cpp
+	#straightMove.hpp
 	#Gameplay.cpp
 )
 

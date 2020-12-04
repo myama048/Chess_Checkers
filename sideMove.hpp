@@ -3,6 +3,7 @@
 #include <vector>
 #include <utility>
 #include "MoveInterface.hpp"
+#include "Piece.hpp"
 
 class SideMove : public MoveInterface{
 	public:

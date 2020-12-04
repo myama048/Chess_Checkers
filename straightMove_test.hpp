@@ -43,7 +43,7 @@ TEST(straightMove, StraightByMultipleOpen){
 	pawn->setBehavior(mv, "Straight");
 	v_p.push_back(pawn);
 	EXPECT_EQ(true, mv->move(board, v_p, 0, 0, 2, 0));
-	mv->move(board, v_p, 0,0,2,0);
+	//mv->move(board, v_p, 0,0,2,0);
 	//EXPECT_EQ(0, board[0][0].first);
 	//EXPECT_EQ(0, board[1][0].first);
 	//EXPECT_EQ(2, board[2][0].first);

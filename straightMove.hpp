@@ -12,12 +12,13 @@ class StraightMove : public MoveInterface {
 	public:
 		bool move(std::vector<std::vector<std::pair<int , int>>> Board, std::vector<Piece*> v_p, int sx, int sy, int dx, int dy){
 			//int user = v_p[idxPieceVector]->get_user(); // need to get user
-			if(sy != dy){ //column should be the same
-				printf("need to move\n");
-				return false;
-			}
+			
 			if(sx == dx){ // move is not done
 				printf("can't go side\n");
+				return false;
+			}
+			if(sy != dy){
+				printf("need to move\n");
 				return false;
 			}
 			if(!(sx >= 0 && sx <= 7 && sy >= 0 && sy <= 7 && dx >= 0 && dx <= 7 && dy >= 0 && dy <= 7)){
@@ -42,11 +43,13 @@ class StraightMove : public MoveInterface {
 				v_p[Board[dx][dy].second]->setStatus(false);// set status of enemy's piece to be taken
 			}
 
+			printf("[dx][dy]: ");
 			Board[dx][dy].first = Board[sx][sy].first;// new location to be occupied
 			//printf("set dx,dy original\n");
-			printf("[dx][dy]: %d\n", Board[dx][dy].first);
+			printf("%d\n", Board[dx][dy].first);
+			printf("[sx][sy]: ");
 			Board[sx][sy].first = 0; // update the start to be empty, 0 = empty
-			printf("[sx][sy]: %d\n", Board[sx][sy].first);
+			printf("%d\n", Board[sx][sy].first);
 			//printf("set sx,sy 0\n");
 			return true;
 		}

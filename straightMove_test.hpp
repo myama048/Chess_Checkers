@@ -24,21 +24,67 @@ TEST(straightMove, StraightByOne){
 	pawn->setBehavior(mv, "Straight");
 	v_p.push_back(pawn);
 	//board.at(0).at(0) = pawn;
-	EXPECT_EQ(true, mv->move(board, v_p, 0, 0, 1, 0));
+	EXPECT_EQ(true, mv->move(board, v_p, 0, 0, 1, 0));//moves made
+	EXPECT_EQ(0, board[0][0].first);
+	EXPECT_EQ(1, board[1][0].first);
 }
-/*
-TEST(straightMove, StraightByMultipleOpen{
-	EXPECT_TRUE(move(board, v_p, 1, 1, 1, 4));
+
+TEST(straightMove, StraightByMultipleOpen){
+	std::vector<Piece*> v_p;
+	std::vector<std::vector<std::pair<int,int>>> board;
+	std::vector<std::pair<int,int>> v1{{2,0}};
+	board.push_back(v1);
+	std::vector<std::pair<int,int>> v2{{0,1}};
+	board.push_back(v2);
+	std::vector<std::pair<int,int>> v3{{0,2}};
+	board.push_back(v3);
+	Piece* pawn = new Pawn("Pawn");
+	MoveInterface* mv = new StraightMove();
+	pawn->setBehavior(mv, "Straight");
+	v_p.push_back(pawn);
+	EXPECT_EQ(true, mv->move(board, v_p, 0, 0, 2, 0));
 }
 
 TEST(straightMove, SideMove){
-	EXPECT_FALSE(move(board, v_p, 2, 2, 3, 4));
+	std::vector<Piece*> v_p;
+	std::vector<std::vector<std::pair<int,int>>> board;
+	std::vector<std::pair<int,int>> v1{{1,0}};
+	board.push_back(v1);
+	Piece* pawn = new Pawn("Pawn");
+	MoveInterface* mv = new StraightMove();
+	pawn->setBehavior(mv, "Straight");
+	v_p.push_back(pawn);
+	EXPECT_EQ(false, mv->move(board, v_p, 0, 0, 0, 3));
 }
 
 TEST(straightMove, PieceInBetween){
-	//there exists other piece at (2, 3)
-	EXPECT_FALSE(move(board, v_p, 2, 2, 2, 5));
+	std::vector<Piece*> v_p;
+	std::vector<std::vector<std::pair<int,int>>> board;
+	std::vector<std::pair<int,int>> v1{{1,0}};
+	board.push_back(v1);
+	std::vector<std::pair<int,int>> v2{{2,1}};
+	board.push_back(v2);
+	Piece* pawn = new Pawn("Pawn");
+	MoveInterface* mv = new StraightMove();
+	pawn->setBehavior(mv, "Straight");
+	v_p.push_back(pawn); 
+	EXPECT_EQ(false, mv->move(board, v_p, 0,0,3,0));
 }
-*/
+
+TEST(straightMove, TakePieceRightInFront){
+	std::vector<Piece*> v_p;
+	std::vector<std::vector<std::pair<int,int>>> board;
+	std::vector<std::pair<int,int>> v1{{1,0}};
+	board.push_back(v1);
+	std::vector<std::pair<int,int>> v2{{2,1}};
+	board.push_back(v2);
+	Piece* pawn = new Pawn("Pawn");
+	MoveInterface* mv = new StraightMove();
+	pawn->setBehavior(mv, "Straight");
+	v_p.push_back(pawn);
+	EXPECT_EQ(true, mv->move(board, v_p, 0,0,1,0));
+	EXPECT_EQ(0, board[0][0].first);
+	EXPECT_EQ(1, board[1][0].first);
+}
 
 #endif

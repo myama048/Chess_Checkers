@@ -20,21 +20,28 @@ class StraightMove : public MoveInterface {
 				return false;
 			
 			for(int i = sx + 1; i < dx - 1; i++){ // loop to check all spots in between sy & (dy - 1) are open
-				if(Board[i][sy].first != 0) // 0 means the board is empty
+				if(Board[i][sy].first != 0){ // 0 means the board is empty
+					printf("there's oppenet's piece\n");
 					return false;
+				}
 			}
 	
 			if(Board[sx][sy].first == Board[dx][dy].first){ // there's other piece on [dx][dy]
+				printf("there's your piece\n");
 				return false;		// 1 means your piece
 			}	
 				
 			else if(Board[dx][dy].first != 0){ // 2 means that there's enemy's piece
+				printf("take it\n");
 				v_p[Board[dx][dy].second]->setStatus(false);// set status of enemy's piece to be taken
 			}
 
 			Board[dx][dy].first = Board[sx][sy].first;// new location to be occupied
+			//printf("set dx,dy original\n");
+			printf("[dx][dy]: %d\n", Board[dx][dy].first);
 			Board[sx][sy].first = 0; // update the start to be empty, 0 = empty
-
+			printf("[sx][sy]: %d\n", Board[sx][sy].first);
+			//printf("set sx,sy 0\n");
 			return true;
 		}
 };

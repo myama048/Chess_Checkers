@@ -10,7 +10,7 @@
 
 class StraightMove : public MoveInterface {
 	public:
-		bool move(std::vector<std::vector<std::pair<int , int>>> Board, std::vector<Piece*> v_p, int sx, int sy, int dx, int dy){
+		bool move(std::vector<std::vector<std::pair<int , int>>> &Board, std::vector<Piece*> &v_p, int sx, int sy, int dx, int dy){
 			//int user = v_p[idxPieceVector]->get_user(); // need to get user
 			
 			if(sx == dx){ // move is not done

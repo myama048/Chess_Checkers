@@ -7,7 +7,7 @@ bool Bishop::setBehavior(MoveInterface* mv,std::string mvtype){
           behavior=mv;
           return true;
           }
-bool Bishop::move (std::vector<std::vector<std::pair<int,int>>> board,
+bool Bishop::move (std::vector<std::vector<std::pair<int,int>>>& board,
           std::vector<Piece*>pieces,int startrow,int startcol,int endrow,int endcol){
           if (behavior->move(board,pieces,startrow,startcol,endrow,endcol)==false)return false;
           movesMade++;

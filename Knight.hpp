@@ -15,7 +15,7 @@ class Knight:public Piece{
         public:
           Knight(std::string name):Piece(name){move_limit=3;}
           bool setBehavior(MoveInterface* mv,std::string mvtype);
-          bool move (std::vector<std::vector<std::pair<int,int>>> board,
+          bool move (std::vector<std::vector<std::pair<int,int>>>& board,
                std::vector<Piece*>pieces,int startrow,int startcol,int endrow,int endcol);
 };
 

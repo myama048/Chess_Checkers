@@ -14,4 +14,3 @@ void Game::print_board() {
 	}
 }
 
-

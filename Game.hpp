@@ -14,7 +14,7 @@ class Game {
 	std::vector<Piece*> pieces;
 	std::vector<bool> player_status;
 	virtual bool check_win() = 0;
-	virtual void move_piece(int,int,int,int);
+	virtual void move_piece(int,int,int,int) = 0;
 	virtual void player_turn(int) = 0;
 
     public:

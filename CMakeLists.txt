@@ -9,7 +9,7 @@ ADD_EXECUTABLE(test
 	unit_test.cpp
 	Piece.cpp
 	#Bishop.cpp
-	#Rook.cpp
+	Rook.cpp
 	#Knight.cpp
 	#King.cpp
 	#Queen.cpp

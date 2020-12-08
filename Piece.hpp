@@ -4,9 +4,9 @@
 #include <vector>
 #include <utility>
 #include <string>
-#include "MoveInterface.hpp"
+//#include "MoveInterface.hpp"
 
-//class MoveInterface;
+class MoveInterface;
 //class DiagonalMove;
 //class StraightMove;
 //class SideMove;

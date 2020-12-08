@@ -26,13 +26,24 @@ class StraightMove : public MoveInterface {
 				return false;
 			}
 			
+			//if(sy <= dy){//moving forward	
 			for(int i = sy + 1; i < dy; i++){ // loop to check all spots in between sy & (dy - 1) are open
 				if(Board[i][sx].first != 0){ // 0 means the board is empty
 					//printf("there's oppenet's piece\n");
 					return false;
 				}
 			}
-	
+ 			/*
+			}
+			
+			else{ // moving back
+				for(int i = sy - 1; i > dy; i--){
+					if(Board[i][sx].first != 0){
+						return false;
+					}
+				}
+			}
+			*/
 			if(Board[sy][sx].first == Board[dy][dx].first){ // there's other piece on [dx][dy]
 				//printf("there's your piece\n");
 				return false;		// 1 means your piece

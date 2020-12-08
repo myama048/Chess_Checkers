@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
-//#include "straightMove_test.hpp"
-#include "sideMove_test.hpp"
+#include "straightMove_test.hpp"
+//#include "sideMove_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

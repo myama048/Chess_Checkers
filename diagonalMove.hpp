@@ -1,5 +1,5 @@
-#ifndef __SIDE_MOVE_HPP__
-#define __SIDE_MOVE_HPP__
+#ifndef __DIAGONAL_MOVE_HPP__
+#define __DIAGONAL_MOVE_HPP__
 
 #include "MoveInterface.hpp"
 #include <utility>

@@ -8,7 +8,7 @@ SET (CMAKE_CXX_STANDARD 11)
 ADD_EXECUTABLE(test
 	unit_test.cpp
 	Piece.cpp
-	#Bishop.cpp
+	Bishop.cpp
 	Rook.cpp
 	#Knight.cpp
 	#King.cpp

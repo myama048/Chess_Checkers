@@ -5,7 +5,7 @@
 #include "MoveInterface.hpp"
 #include "straightMove.hpp"
 #include "sideMove.hpp"
-//#include "diagonalMove.hpp"
+#include "diagonalMove.hpp"
 #include "KnightMove.hpp"
 #include "Piece.hpp"
 

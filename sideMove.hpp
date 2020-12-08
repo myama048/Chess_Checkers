@@ -4,12 +4,13 @@
 #include "MoveInterface.hpp"
 #include <utility>
 #include <vector>
+#include "Pawn.hpp"
 #include "Rook.hpp"
 #include "Piece.hpp"
 
 class SideMove : public MoveInterface {
 	public:
-		bool move(std::vector<std::vector<std::pair<int , int>>> &Board, std::vector<Piece*> &v_p, int sy, int sx, int dy, int dx){
+		bool move(std::vector<std::vector<std::pair<int, int>>> &Board, std::vector<Piece*> v_p, int sy, int sx, int dy, int dx){
 			
 			if(sx == dx){ 
 				//printf("can't go straight\n");

@@ -10,7 +10,7 @@
 
 class StraightMove : public MoveInterface {
 	public:
-		bool move(std::vector<std::vector<std::pair<int , int>>> &Board, std::vector<Piece*> &v_p, int sy, int sx, int dy, int dx){
+		bool move(std::vector<std::vector<std::pair<int , int>>> &Board, std::vector<Piece*> v_p, int sy, int sx, int dy, int dx){
 			//int user = v_p[idxPieceVector]->get_user(); // need to get user
 			
 			if(sy == dy){ // move is not done
@@ -26,24 +26,24 @@ class StraightMove : public MoveInterface {
 				return false;
 			}
 			
-			//if(sy <= dy){//moving forward	
+			if(sy < dy){//moving forward	
 			for(int i = sy + 1; i < dy; i++){ // loop to check all spots in between sy & (dy - 1) are open
 				if(Board[i][sx].first != 0){ // 0 means the board is empty
 					//printf("there's oppenet's piece\n");
 					return false;
 				}
 			}
- 			/*
+ 			
 			}
 			
-			else{ // moving back
+			else if(sy > dy){ // moving back
 				for(int i = sy - 1; i > dy; i--){
 					if(Board[i][sx].first != 0){
 						return false;
 					}
 				}
 			}
-			*/
+			
 			if(Board[sy][sx].first == Board[dy][dx].first){ // there's other piece on [dx][dy]
 				//printf("there's your piece\n");
 				return false;		// 1 means your piece

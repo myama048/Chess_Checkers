@@ -49,6 +49,7 @@ class CheckerMove : public MoveInterface {
 			
 			//printf("\n[dx][dy]: ");
 			Board[dy][dx].first = Board[sy][sx].first;// new location to be occupied
+			Board[dy][dx].second= Board[sy][sx].second;
 			//printf("set dx,dy original\n");
 			//printf("%d\n", Board[dx][dy].first);
 			//printf("[sx][sy]: ");

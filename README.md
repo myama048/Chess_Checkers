@@ -24,17 +24,14 @@ Our proxy pattern will be acting upon our game class that will be instatiated as
 
 
  > ## Final deliverable
- > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
- ## Screenshots
+## Screenshots
 <img src="images/CheckersGameplay1.png">
 <img src="images/ChessGameplay1.png">
 <img src="images/ChessGameplay2.png">
 <img src="images/ChessGameplay3.png">
 <img src="images/Menu.png">
- ## Installation/Usage
+
+## Installation/Usage
  To install our project on hammer type the following commands:
  git clone --recursive https://github.com/cs100/final-project-tgust002-jruiz096-myama048.git
  cmake3 .
@@ -43,6 +40,6 @@ Our proxy pattern will be acting upon our game class that will be instatiated as
  ./play
  To be able to to test that all classes our working correctly enter the command:
  ./test
- ## Testing
+## Testing
  To test the project we wrote our own google unit tests on each of our own branches, when a merge request was made the reviewer was responsible for checking if any of the existing tests had any changes.  We used both drivers and stubs depending on what the situation called for.
  

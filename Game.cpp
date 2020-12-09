@@ -1,7 +1,7 @@
 #include "Game.hpp"
 
-Game::Game() {}
 
+Game::Game() {}
 void Game::print_board() {
 	// loop through outer vector
 	for(int i = 0; i < 8; i++) {

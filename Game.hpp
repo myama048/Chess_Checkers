@@ -18,19 +18,22 @@
 #include "StraightMove.hpp"
 #include "DiagonalMove.hpp"
 #include "KnightMove.hpp"
+#include "Piece.hpp"
+
+//class Piece;
 
 class Game {
     protected:
 	std::vector<std::vector<std::pair<int,int>>> board;
-	std::vector<std::string> player_names;
+	std::vector<std::string> player_name;
 	std::vector<Piece*> pieces;
 	std::vector<bool> player_status;
 
     public:
 	Game();
-	virtual ~Game() {
+	virtual ~Game(){
 		board.clear();
-		player_names.clear();
+		player_name.clear();
 		player_status.clear();
 		pieces.clear();
 	}

@@ -65,7 +65,7 @@ bool Chess::move_piece(int sx, int sy, int dx, int dy) {
 }
 
 Chess::Chess(std::vector<std::string> names) {
-	player_names = names;
+	player_name = names;
 	activate_players();
 	populate_board();
 }
@@ -74,7 +74,7 @@ void Chess::play_game() {
 	// set initial turn
 	int turn = 1;
 	while (!check_win()) {
-		std::cout << player_names.at(turn - 1) << "'s turn... " << std::endl;
+		std::cout << player_name.at(turn - 1) << "'s turn... " << std::endl;
 		print_board();
 		if (turn == 1) {
 			player_turn(turn);
@@ -218,7 +218,7 @@ void Chess::populate_board() {
 }
 
 void Chess::activate_players() {
-	for (unsigned int i = 0; i < player_names.size(); i++) {
+	for (unsigned int i = 0; i < player_name.size(); i++) {
 		player_status.push_back(true);
 	}
 }

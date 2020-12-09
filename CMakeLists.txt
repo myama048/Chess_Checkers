@@ -5,8 +5,8 @@ ADD_SUBDIRECTORY(googletest)
 SET (CMAKE_CXX_STANDARD 11)
 
 
-ADD_EXECUTABLE(main
-	main.cpp
+ADD_EXECUTABLE(test
+	unit_test.cpp
 	Piece.cpp
 	Bishop.cpp
 	Rook.cpp
@@ -16,10 +16,19 @@ ADD_EXECUTABLE(main
 	Pawn.cpp
 	Chess.cpp
 	Game.cpp
+	Checker.cpp
+	SideMove.cpp
+	KnightMove.cpp
+	CheckerMove.cpp
+	DiagonalMove.cpp
+	StraightMove.cpp
+	Gameplay.cpp
+	Game.cpp
+	Checkers.cpp
 )
 
-ADD_EXECUTABLE(test
-        unit_test.cpp
+ADD_EXECUTABLE(play
+        main.cpp
         Piece.cpp
         Bishop.cpp
         Rook.cpp
@@ -29,9 +38,18 @@ ADD_EXECUTABLE(test
         Pawn.cpp
         Chess.cpp
         Game.cpp
+        Checker.cpp
+        SideMove.cpp
+        KnightMove.cpp
+        CheckerMove.cpp
+        DiagonalMove.cpp
+        StraightMove.cpp
+        Gameplay.cpp
+        Game.cpp
+        Checkers.cpp
 )
 
 
 
 TARGET_LINK_LIBRARIES(test gtest)
-#TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
+TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)

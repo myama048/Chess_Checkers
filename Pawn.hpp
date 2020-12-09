@@ -7,7 +7,7 @@
 #include "straightMove.hpp"
 #include "diagonalMove.hpp"
 #include "sideMove.hpp"
-#include "KnightMove.hpp"
+#include "knightMove.hpp"
 #include "Piece.hpp"
 
 class Pawn:public Piece{

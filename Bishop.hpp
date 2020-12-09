@@ -7,7 +7,7 @@
 #include "diagonalMove.hpp"
 #include "straightMove.hpp"
 #include "sideMove.hpp"
-#include "KnightMove.hpp"
+#include "knightMove.hpp"
 
 
 class Bishop : public Piece{

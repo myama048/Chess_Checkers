@@ -6,7 +6,7 @@
 #include "straightMove.hpp"
 #include "sideMove.hpp"
 #include "diagonalMove.hpp"
-#include "KnightMove.hpp"
+#include "knightMove.hpp"
 #include "Piece.hpp"
 
 class Rook:public Piece{

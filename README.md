@@ -29,11 +29,11 @@ Our proxy pattern will be acting upon our game class that will be instatiated as
  > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
-<img src="CheckersGameplay1.png">
-<img src="ChessGameplay1.png">
-<img src="ChessGameplay2.png">
-<img src="ChessGameplay3.png">
-<img src="Menu.png">
+<img src="images/CheckersGameplay1.png">
+<img src="images/ChessGameplay1.png">
+<img src="images/ChessGameplay2.png">
+<img src="images/ChessGameplay3.png">
+<img src="images/Menu.png">
  ## Installation/Usage
  To install our project on hammer type the following commands:
  git clone --recursive https://github.com/cs100/final-project-tgust002-jruiz096-myama048.git

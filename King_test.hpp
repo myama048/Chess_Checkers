@@ -2,9 +2,9 @@
 #include "Piece.hpp"
 #include "King.hpp"
 #include "MoveInterface.hpp"
-#include "SideMove.hpp"
-#include "DiagonalMove.hpp"
-#include "KnightMove.hpp"
+#include "sideMove.hpp"
+#include "diagonalMove.hpp"
+#include "knightMove.hpp"
 #include <vector>
 #include <utility>
 
@@ -43,6 +43,16 @@ TEST (KingTest, move){
         MoveInterface* mv = new StraightMove();
 	std::vector<std::vector<std::pair<int,int>>> board;
 	std::vector<Piece*> pieces;
+	        std::vector<std::pair<int,int>> v;
+        for (int i=0; i<8; i++){
+        std::pair<int,int>space(0,0);
+        v.push_back(space);
+        }
+        for (int i=0; i<8; i++){
+        board.push_back(v);
+        }
+        pieces.push_back(kn);
+	board[0][2].first=1;
 	ASSERT_EQ(true, kn->setBehavior(mv, "Straight"));
 	EXPECT_EQ(false, kn->move(board,pieces,0,2,4,5));
 }
@@ -52,6 +62,16 @@ TEST (KingTest, Checkmoves){
         MoveInterface* mv = new DiagonalMove();
         std::vector<std::vector<std::pair<int,int>>> board;
         std::vector<Piece*> pieces;
+        std::vector<std::pair<int,int>> v;
+        for (int i=0; i<8; i++){
+        std::pair<int,int>space(0,0);
+        v.push_back(space);
+        }
+        for (int i=0; i<8; i++){
+        board.push_back(v);
+        }
+        pieces.push_back(kn);
+	board[0][2].first=1;
         ASSERT_EQ(true, kn->setBehavior(mv, "Diagonal"));
         ASSERT_EQ(true, kn->move(board,pieces,0,2,1,3));
 	EXPECT_EQ(1,kn->getmovesMade());

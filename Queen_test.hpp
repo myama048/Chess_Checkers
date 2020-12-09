@@ -2,9 +2,9 @@
 #include "Piece.hpp"
 #include "Queen.hpp"
 #include "MoveInterface.hpp"
-#include "SideMove.hpp"
-#include "DiagonalMove.hpp"
-#include "KnightMove.hpp"
+#include "sideMove.hpp"
+#include "diagonalMove.hpp"
+#include "knightMove.hpp"
 #include <vector>
 #include <utility>
 
@@ -43,8 +43,19 @@ TEST (QueenTest, move){
         MoveInterface* mv = new SideMove();
 	std::vector<std::vector<std::pair<int,int>>> board;
 	std::vector<Piece*> pieces;
+	std::vector<std::pair<int,int>> v;
+    	for (int i=0; i<8; i++){
+        	std::pair<int,int>space(0,0);
+        	v.push_back(space);
+    	}
+    	for (int i=0; i<8; i++){
+        	board.push_back(v);
+    	}
 	ASSERT_EQ(true, qn->setBehavior(mv, "Side"));
-	EXPECT_EQ(false, qn->move(board,pieces,0,2,0,5));
+	pieces.push_back(qn);
+	board[0][2].first=1;
+	board[0][2].second=0;
+	EXPECT_EQ(true, qn->move(board,pieces,0,2,0,5));
 }
 
 TEST (QueenTest, Checkmoves){
@@ -53,6 +64,17 @@ TEST (QueenTest, Checkmoves){
         std::vector<std::vector<std::pair<int,int>>> board;
         std::vector<Piece*> pieces;
         ASSERT_EQ(true, qn->setBehavior(mv, "Diagonal"));
+        std::vector<std::pair<int,int>> v;
+        for (int i=0; i<8; i++){
+                std::pair<int,int>space(0,0);
+                v.push_back(space);
+        }
+        for (int i=0; i<8; i++){
+                board.push_back(v);
+        }
+	board[0][2].first=1;
+        board[0][2].second=0;
+	pieces.push_back(qn);
         ASSERT_EQ(true, qn->move(board,pieces,0,2,3,5));
 	EXPECT_EQ(1,qn->getmovesMade());
 }

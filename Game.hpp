@@ -14,10 +14,10 @@
 #include "Queen.hpp"
 #include "King.hpp"
 #include "MoveInterface.hpp"
-#include "SideMove.hpp"
-#include "StraightMove.hpp"
-#include "DiagonalMove.hpp"
-#include "KnightMove.hpp"
+#include "sideMove.hpp"
+#include "straightMove.hpp"
+#include "diagonalMove.hpp"
+#include "knightMove.hpp"
 #include "Piece.hpp"
 
 //class Piece;

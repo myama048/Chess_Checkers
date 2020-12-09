@@ -37,7 +37,6 @@ void Chess::player_turn(int curr_player) {
 bool Chess::move_piece(int sx, int sy, int dx, int dy) {
 	if (sx > 8 || sy > 8 || sx < 0 || sy < 0 || dx > 8 || dy > 8 || dx < 0 || dy < 0)
 		return false;
-
 	std::string move_type;
 	MoveInterface* mv = nullptr;
 	if (sx == dx) {

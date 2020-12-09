@@ -4,10 +4,10 @@
 #include <utility>
 #include "Piece.hpp"
 #include "MoveInterface.hpp"
-#include "DiagonalMove.hpp"
-#include "StraightMove.hpp"
-#include "SideMove.hpp"
-#include "KnightMove.hpp"
+#include "diagonalMove.hpp"
+#include "straightMove.hpp"
+#include "sideMove.hpp"
+#include "knightMove.hpp"
 
 
 class Bishop : public Piece{

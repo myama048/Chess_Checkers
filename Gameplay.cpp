@@ -71,7 +71,7 @@ void Gameplay::Menu(){
         std::cout<<"3.Play Again\n";
         std::cout<<"4.Start Over\n";
         std::cout<<"5.Play Game\n";
-        std::cout<<"6.Print Board";
+        std::cout<<"6.Print Board\n";
         std::cout<<"7.Exit\n";
         std::cin>>input;
         if (input==1)SetNames();
@@ -83,10 +83,10 @@ void Gameplay::Menu(){
         else if(input==7)std::cout<<"Thank you for playing.\n";
         else std::cout<<"Invalid Input";
     }while(input!=7);
-        if (game!=nullptr)delete[]game;
+        //if (game!=nullptr)delete[]game;
 }
 void Gameplay::PrintBoard(){
-    if (game!=nullptr)game->PrintBoard();
+    if (game!=nullptr)game->print_board();
     else std::cout<<"No game to print board from\n";
 }
 void Gameplay::Startover(){
@@ -99,12 +99,12 @@ void Gameplay::Play(){
     if (gamechoice<1||gamechoice>3)ChooseGame();
     if (names.size()==0)SetNames();
     MakeGame();
-    game->playGame();
+    game->play_game();
 }
 void Gameplay::MakeGame(){
     if (gamechoice==1)game=new Checkers(names);
-    else if (gamechoice==2)game=new Chess(names);
-    else if (gamechoice==3)game=new MakeyourOwn(names);    
+    //else if (gamechoice==2)game=new Chess(names);
+    //else if (gamechoice==3)game=new MakeyourOwn(names);    
 }
 void Gameplay::PlayAgain(){
     if(game!=nullptr)delete[]game;

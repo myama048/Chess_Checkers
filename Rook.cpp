@@ -11,7 +11,7 @@ bool Rook::setBehavior(MoveInterface* mv,std::string mvtype){
           return true;
           }
           
-bool Rook::move (std::vector<std::vector<std::pair<int,int>>> board,
+bool Rook::move (std::vector<std::vector<std::pair<int,int>>>& board,
           std::vector<Piece*>pieces,int startrow,int startcol,int endrow,int endcol){
           if (behavior->move(board,pieces,startrow,startcol,endrow,endcol)==false)return false;
           movesMade++;

@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include <utility>
-
+#include "MoveInterface.hpp"
 
 Piece::Piece(std::string name){
 	this->name=name;

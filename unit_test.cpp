@@ -7,6 +7,7 @@
 #include "Pawn_test.hpp"
 #include "Queen_test.hpp"
 #include "Gameplay_test.hpp"
+#include "Checkers_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

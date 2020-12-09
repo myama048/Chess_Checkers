@@ -3,9 +3,9 @@
 #include <vector>
 #include <string>
 #include "Game.hpp"
-#include "Chess.hpp"
+//#include "Chess.hpp"
 #include "Checkers.hpp"
-#include "MakeyourOwn.hpp"
+//#include "MakeyourOwn.hpp"
 class Gameplay{
     private:
         int gamechoice;

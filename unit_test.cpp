@@ -1,4 +1,5 @@
 #include "gtest/gtest.h"
+#include "Chess_test.hpp"
 #include "Bishop_test.hpp"
 #include "Rook_test.hpp"
 #include "Checker_test.hpp"

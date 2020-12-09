@@ -5,6 +5,19 @@
 #include <vector>
 #include <iostream>
 #include <utility>
+#include <cmath>
+#include "Piece.hpp"
+#include "Pawn.hpp"
+#include "Rook.hpp"
+#include "Knight.hpp"
+#include "Bishop.hpp"
+#include "Queen.hpp"
+#include "King.hpp"
+#include "MoveInterface.hpp"
+#include "SideMove.hpp"
+#include "StraightMove.hpp"
+#include "DiagonalMove.hpp"
+#include "KnightMove.hpp"
 #include "Piece.hpp"
 
 //class Piece;
@@ -26,6 +39,17 @@ class Game {
 	}
 	virtual void play_game() = 0;
 	void print_board();
+	virtual bool check_win() = 0;
+	virtual bool move_piece(int, int, int, int) = 0;
+	virtual void player_turn(int) = 0;
+
+	// functions for testing
+	void set_piece_status_false(int i, int j) {
+		pieces.at(board.at(i).at(j).second)->setStatus(false);
+	}
+	std::string check_board_contents(int i, int j) {
+		return pieces.at(board.at(i).at(j).second)->getName();
+	}
 };
 
 #endif

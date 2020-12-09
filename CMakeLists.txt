@@ -14,6 +14,8 @@ ADD_EXECUTABLE(test
 	King.cpp
 	Queen.cpp
 	Pawn.cpp
+	Chess.cpp
+	Game.cpp
 	Checker.cpp
 	SideMove.cpp
 	KnightMove.cpp
@@ -34,6 +36,8 @@ ADD_EXECUTABLE(play
         King.cpp
         Queen.cpp
         Pawn.cpp
+        Chess.cpp
+        Game.cpp
         Checker.cpp
         SideMove.cpp
         KnightMove.cpp

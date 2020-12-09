@@ -1,0 +1,37 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+
+ADD_SUBDIRECTORY(googletest)
+
+SET (CMAKE_CXX_STANDARD 11)
+
+
+ADD_EXECUTABLE(main
+	main.cpp
+	Piece.cpp
+	Bishop.cpp
+	Rook.cpp
+	Knight.cpp
+	King.cpp
+	Queen.cpp
+	Pawn.cpp
+	Chess.cpp
+	Game.cpp
+)
+
+ADD_EXECUTABLE(test
+        unit_test.cpp
+        Piece.cpp
+        Bishop.cpp
+        Rook.cpp
+        Knight.cpp
+        King.cpp
+        Queen.cpp
+        Pawn.cpp
+        Chess.cpp
+        Game.cpp
+)
+
+
+
+TARGET_LINK_LIBRARIES(test gtest)
+#TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)

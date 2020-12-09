@@ -5,22 +5,48 @@
 #include <vector>
 #include <iostream>
 #include <utility>
-#include "Piece"
+#include <cmath>
+#include "Piece.hpp"
+#include "Pawn.hpp"
+#include "Rook.hpp"
+#include "Knight.hpp"
+#include "Bishop.hpp"
+#include "Queen.hpp"
+#include "King.hpp"
+#include "MoveInterface.hpp"
+#include "SideMove.hpp"
+#include "StraightMove.hpp"
+#include "DiagonalMove.hpp"
+#include "KnightMove.hpp"
 
 class Game {
-    private:
+    protected:
 	std::vector<std::vector<std::pair<int,int>>> board;
-	std::string* player_name;
+	std::vector<std::string> player_names;
 	std::vector<Piece*> pieces;
 	std::vector<bool> player_status;
-	virtual bool check_win() = 0;
-	virtual void move_piece(int,int,int,int) = 0;
-	virtual void player_turn(int) = 0;
 
     public:
 	Game();
+	virtual ~Game() {
+		board.clear();
+		player_names.clear();
+		player_status.clear();
+		pieces.clear();
+	}
 	virtual void play_game() = 0;
-	virtual void print_board();
+	void print_board();
+	virtual bool check_win() = 0;
+	virtual bool move_piece(int, int, int, int) = 0;
+	virtual void player_turn(int) = 0;
+
+	// functions for testing
+	void set_piece_status_false(int i, int j) {
+		pieces.at(board.at(i).at(j).second)->setStatus(false);
+	}
+	std::string check_board_contents(int i, int j) {
+		return pieces.at(board.at(i).at(j).second)->getName();
+	}
 };
 
 #endif

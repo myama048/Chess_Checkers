@@ -23,7 +23,7 @@ class Piece{
         Piece(std::string name);
         bool returnStatus();
         void setStatus(bool stat);
-        virtual bool move (std::vector<std::vector<std::pair<int,int>>> board,
+        virtual bool move (std::vector<std::vector<std::pair<int,int>>>& board,
                std::vector<Piece*>,int startrow,int startcol,int endrow,int endcol)=0;
         std::string getName();
         virtual bool setBehavior(MoveInterface* mv,std::string)=0;

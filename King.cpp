@@ -9,7 +9,7 @@ bool King::setBehavior(MoveInterface* mv,std::string mvtype){
           return true;
           }
           
-bool King::move (std::vector<std::vector<std::pair<int,int>>> board,
+bool King::move (std::vector<std::vector<std::pair<int,int>>>& board,
                std::vector<Piece*>pieces,int startrow,int startcol,int endrow,int endcol){
                if(abs(startrow-endrow)>move_limit||abs(startcol-endcol)>move_limit)return false;
                if (behavior->move(board,pieces,startrow,startcol,endrow,endcol)==false)return false;

@@ -9,7 +9,7 @@
 #include "Piece.hpp"
 #include "Checker.hpp"
 #include "MoveInterface.hpp"
-#include "CheckerMove.hpp"
+#include "checkerMove.hpp"
 #include <cmath>
 
 

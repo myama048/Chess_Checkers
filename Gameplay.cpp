@@ -4,8 +4,8 @@
 #include <iostream>
 #include "Game.hpp"
 #include "Chess.hpp"
-//#include "Checkers.hpp"
-#include "MakeyourOwn.hpp"
+#include "Checkers.hpp"
+//#include "MakeyourOwn.hpp"
 
 void Gameplay::SetNames(){
     if (playernum==0)inputPlayernum();
@@ -49,9 +49,9 @@ void Gameplay::ChooseGame(){
     std::cout<<"What game would you like to play?\n";
     std::cout<<"1.Checkers\n";
     std::cout<<"2.Chess\n";
-    std::cout<<"3.Make Your Own Rules Chess\n";
+    //std::cout<<"3.Make Your Own Rules Chess\n";
     std::cin>>gamechoice;
-    if (gamechoice<1||gamechoice>3){
+    if (gamechoice<1||gamechoice>2){
         std::cout<<"Invalid Input\n";
         ChooseGame();
     }
@@ -90,7 +90,7 @@ void Gameplay::PrintBoard(){
     else std::cout<<"No game to print board from\n";
 }
 void Gameplay::Startover(){
-    if (game!=nullptr)delete [] game;
+    //if (game!=nullptr)delete [] game;
     playernum=0;
     gamechoice=0;
     names.clear();
@@ -103,10 +103,10 @@ void Gameplay::Play(){
 }
 void Gameplay::MakeGame(){
     if (gamechoice==1)game=new Checkers(names);
-    //else if (gamechoice==2)game=new Chess(names);
+    else if (gamechoice==2)game=new Chess(names);
     //else if (gamechoice==3)game=new MakeyourOwn(names);    
 }
 void Gameplay::PlayAgain(){
-    if(game!=nullptr)delete[]game;
+    //if(game!=nullptr)delete[]game;
     Play();
 }

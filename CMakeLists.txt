@@ -15,11 +15,20 @@ ADD_EXECUTABLE(test
 	Queen.cpp
 	Pawn.cpp
 	Checker.cpp
-	SideMove.cpp
-	KnightMove.cpp
+	#sideMove.cpp
+	#KnightMove.cpp
+	#CheckerMove.cpp
+	#diagonalMove.cpp
+	#straightMove.cpp
+	Gameplay.cpp
+	Chess.cpp
+	Game.cpp
+	Checker.cpp
+	#SideMove.cpp
+	#KnightMove.cpp
 	CheckerMove.cpp
 	DiagonalMove.cpp
-	StraightMove.cpp
+	#StraightMove.cpp
 	Gameplay.cpp
 	Game.cpp
 	Checkers.cpp
@@ -34,12 +43,14 @@ ADD_EXECUTABLE(play
         King.cpp
         Queen.cpp
         Pawn.cpp
+        Chess.cpp
+        Game.cpp
         Checker.cpp
-        SideMove.cpp
-        KnightMove.cpp
+        #SideMove.cpp
+        #KnightMove.cpp
         CheckerMove.cpp
         DiagonalMove.cpp
-        StraightMove.cpp
+        #StraightMove.cpp
         Gameplay.cpp
         Game.cpp
         Checkers.cpp

@@ -4,10 +4,10 @@
 #include <utility>
 #include <cmath>
 #include "MoveInterface.hpp"
-#include "StraightMove.hpp"
-#include "SideMove.hpp"
-#include "DiagonalMove.hpp"
-#include "KnightMove.hpp"
+#include "straightMove.hpp"
+#include "sideMove.hpp"
+#include "diagonalMove.hpp"
+#include "knightMove.hpp"
 #include "Piece.hpp"
 
 

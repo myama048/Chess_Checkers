@@ -4,7 +4,7 @@
 #include <utility>
 #include <cmath>
 #include "MoveInterface.hpp"
-#include "CheckerMove.hpp"
+#include "checkerMove.hpp"
 #include "Piece.hpp"
 
 

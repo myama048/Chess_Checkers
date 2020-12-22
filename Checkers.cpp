@@ -124,6 +124,9 @@ void Checkers::play_game(){
         
        
     }
+	for (int i=0; i<player_status.size();i++){
+	if (player_status[i]==true)std::cout<<"Congratulations "<<player_name[i]<<std::endl;
+	}
 }
 void Checkers::checkPlayers(){
     
